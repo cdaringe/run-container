@@ -10,23 +10,25 @@
     "ava": "^1.0.1",
     "husky": "^1.2.1",
     "lint-staged": "^8.1.0",
+    "npm-run-all": "^4.1.5",
     "prettier-standard": "^8.0.1",
     "semantic-release": "^15.13.0",
     "typescript": "^3.2.2"
   },
   "dependencies": {
-    "dockerode": "^2",
-    "execa": "^1.0.0",
     "@types/dockerode": "^2",
-    "@types/execa": "^0"
+    "@types/execa": "^0",
+    "dockerode": "^2",
+    "execa": "^1.0.0"
   },
   "scripts": {
-    "format": "prettier-standard '{src,test,scripts}/**/*.{js,jsx,ts,tsx}'",
-    "test": "ava 'src/**/*.test.js'",
     "build": "tsc",
-    "docs": "rm -rf docs && mkdir -p docs && cp -r src/*.d.ts/ docs",
+    "docs": "rm -rf docs && mkdir -p docs && cp -r src/*.d.ts docs && git add docs -f",
+    "format": "prettier-standard '{src,test,scripts}/**/*.{js,jsx,ts,tsx}'",
+    "lint-staged": "lint-staged",
     "precommit": "run-s build lint-staged docs",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "test": "ava 'src/**/*.test.js'"
   },
   "husky": {
     "hooks": {
