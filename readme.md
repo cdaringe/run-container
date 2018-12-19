@@ -4,7 +4,7 @@ run a docker container in nodejs
 
 runs a container using [dockerode](https://www.npmjs.com/package/dockerode), bootstrapping the pull & start processes, whilst also exposing a compact function to simplify docker's and dockerode's otherwise complex APIs
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![TypeScript definitions on DefinitelyTyped](//definitelytyped.org/badges/standard.svg)](http://definitelytyped.org) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Greenkeeper badge](https://badges.greenkeeper.io/cdaringe/run-container.svg)](https://greenkeeper.io/) [![CircleCI](https://circleci.com/gh/cdaringe/run-container.svg?style=svg)](https://circleci.com/gh/cdaringe/run-container)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![TypeScript package](https://img.shields.io/badge/typings-included-blue.svg)](https://www.typescriptlang.org) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Greenkeeper badge](https://badges.greenkeeper.io/cdaringe/run-container.svg)](https://greenkeeper.io/) [![CircleCI](https://circleci.com/gh/cdaringe/run-container.svg?style=svg)](https://circleci.com/gh/cdaringe/run-container)
 
 ## usage
 
