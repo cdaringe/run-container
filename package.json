@@ -1,0 +1,56 @@
+{
+  "name": "run-container",
+  "version": "0.0.0-semantic-release",
+  "description": "run a docker container as concisely as possible",
+  "main": "src/run-container.js",
+  "repository": "git@github.com:cdaringe/run-container.git",
+  "author": "cdaringe <christopher.dieringer@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^1.0.1",
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "prettier-standard": "^8.0.1",
+    "semantic-release": "^15.13.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "dockerode": "^2",
+    "execa": "^1.0.0",
+    "@types/dockerode": "^2",
+    "@types/execa": "^0"
+  },
+  "scripts": {
+    "format": "prettier-standard '{src,test,scripts}/**/*.{js,jsx,ts,tsx}'",
+    "test": "ava 'src/**/*.test.js'",
+    "build": "tsc",
+    "docs": "rm -rf docs && mkdir -p docs && cp -r src/*.d.ts/ docs",
+    "precommit": "run-s build lint-staged docs",
+    "semantic-release": "semantic-release"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "{src,test,scripts}/**/*.{js,jsx,ts,tsx}": [
+        "yarn format",
+        "git add"
+      ]
+    }
+  },
+  "ava": {
+    "babel": false,
+    "compileEnhancements": false
+  },
+  "keywords": [
+    "docker",
+    "container",
+    "run",
+    "test",
+    "node",
+    "dockerode"
+  ]
+}
