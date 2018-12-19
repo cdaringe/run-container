@@ -1,7 +1,7 @@
 {
   "name": "run-container",
   "version": "0.0.0-semantic-release",
-  "description": "run a docker container as concisely as possible",
+  "description": "run a docker container in nodejs, as concisely as possible",
   "main": "src/run-container.js",
   "repository": "git@github.com:cdaringe/run-container.git",
   "author": "cdaringe <christopher.dieringer@gmail.com>",
