@@ -16,7 +16,6 @@ export interface RunContainerOptions extends Docker.ContainerCreateOptions {
   Image: string
 }
 
-
 export const run = async (
   opts: RunContainerOptions
 ): Promise<Docker.Container> => {
@@ -29,24 +28,26 @@ export const run = async (
 }
 
 export type RunSimpleOptions = {
-  autoRemove?: boolean,
+  autoRemove?: boolean
   bindMounts?: {
     [hostPath: string]: string
   }
   cmd?: Docker.ContainerCreateOptions['Cmd']
   env?: { [key: string]: string }
   image: string
+  name?: string
   ports?: {
     [containerTcpPort: string]: string
   }
 }
 export const runSimple = async (opts: RunSimpleOptions) => {
-  if (!opts) throw new Error('expected runSimple RunSimpleOptions configuration object')
+  if (!opts) { throw new Error('expected runSimple RunSimpleOptions configuration object') }
   const {
     autoRemove,
     cmd,
     env = {},
     image: Image,
+    name,
     ports = {},
     bindMounts = {}
   } = opts
@@ -55,7 +56,7 @@ export const runSimple = async (opts: RunSimpleOptions) => {
     Image,
     HostConfig: {
       Binds: [],
-      PortBindings: {},
+      PortBindings: {}
     }
   }
   if (autoRemove !== undefined) {
@@ -64,15 +65,22 @@ export const runSimple = async (opts: RunSimpleOptions) => {
   if (cmd !== undefined) {
     dockerodeConfig.Cmd = cmd
   }
+  if (name !== undefined) dockerodeConfig.name = name
   for (const containerPort in ports) {
-    const hostPort =  ports[containerPort]
-    const tcpContainerPort = !!containerPort.match(/tcp/) ? containerPort : `${containerPort}/tcp`
-    const tcpHostPort = !!hostPort.match(/tcp/) ? hostPort : `${hostPort}/tcp`
-    dockerodeConfig.HostConfig!.PortBindings![tcpContainerPort] = [{ HostPort: tcpHostPort }]
+    const hostPort = ports[containerPort]
+    const tcpContainerPort = containerPort.match(/tcp/)
+      ? containerPort
+      : `${containerPort}/tcp`
+    const tcpHostPort = hostPort.match(/tcp/) ? hostPort : `${hostPort}/tcp`
+    dockerodeConfig.HostConfig!.PortBindings![tcpContainerPort] = [
+      { HostPort: tcpHostPort }
+    ]
   }
   for (const hostVolume in bindMounts) {
-    const containerVolume =  bindMounts[hostVolume]
-    dockerodeConfig.HostConfig!.Binds!.push(`${path.resolve(hostVolume)}:${containerVolume}`)
+    const containerVolume = bindMounts[hostVolume]
+    dockerodeConfig.HostConfig!.Binds!.push(
+      `${path.resolve(hostVolume)}:${containerVolume}`
+    )
   }
   for (const key in env) {
     dockerodeConfig.Env!.push(`${key}=${env[key]}`)

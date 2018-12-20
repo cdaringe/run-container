@@ -37,14 +37,16 @@ test('boots a simple container', async t => {
     cmd: ['bash', '/test/test.sh'],
     image: 'bash',
     env: {
-      'DB_URL': 'fake-path-to-db'
+      DB_URL: 'fake-path-to-db'
     },
+    name: 'bashlyfe',
     ports: {
       '4000': '4000'
-    },
+    }
   })
   const containerData = await container.inspect()
   t.is(containerData.State.Status, 'running', 'db is running')
+  t.is(containerData.Name, '/bashlyfe')
   await container.wait()
   const stream = (await container.logs({ stdout: true })) as any
   t.truthy((stream as string).match(/TESTING/))

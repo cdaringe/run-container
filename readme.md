@@ -22,6 +22,7 @@ await runSimple({
   cmd: ['bash', '/path/to/container/file.sh'],
   env: { 'KEY': 'VALUE' },
   image: 'bash',
+  name: 'script-fun',
   ports: { '4000': '4000' } // tcp ports only. otherwise, use `run`
 })
 await container.wait()
