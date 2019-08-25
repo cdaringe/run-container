@@ -41,7 +41,7 @@ test('boots a simple container', async t => {
     },
     name: 'bashlyfe',
     ports: {
-      '4000': '4000'
+      4000: '4000'
     }
   })
   const containerData = await container.inspect()

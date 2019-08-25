@@ -7,7 +7,7 @@ export async function imageExists (imageName: string) {
     await execa('docker', ['image', 'inspect', imageName], { stdio: 'ignore' })
     return true
   } catch (err) {
-    // @TODO this is fragile, but dockerode is being a PIA
+    // @TODO improve robustness of this sloppy catch
     return false
   }
 }
@@ -21,7 +21,7 @@ export const run = async (
 ): Promise<Docker.Container> => {
   const docker = new Docker({ socketPath: '/var/run/docker.sock' })
   const { Image: image } = opts
-  if (!await imageExists(image)) await execa('docker', ['pull', image])
+  if (!(await imageExists(image))) await execa('docker', ['pull', image])
   const container = await docker.createContainer(opts)
   await container.start()
   return container
@@ -41,7 +41,9 @@ export type RunSimpleOptions = {
   }
 }
 export const runSimple = async (opts: RunSimpleOptions) => {
-  if (!opts) { throw new Error('expected runSimple RunSimpleOptions configuration object') }
+  if (!opts) {
+    throw new Error('expected runSimple RunSimpleOptions configuration object')
+  }
   const {
     autoRemove,
     cmd,
