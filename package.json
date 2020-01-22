@@ -14,7 +14,7 @@
     "lint-staged": "10.0.2",
     "npm-run-all": "4.1.5",
     "prettier-standard": "16.1.0",
-    "semantic-release": "16.0.2",
+    "semantic-release": "16.0.3",
     "standardx": "5.0.0",
     "typescript": "3.7.5"
   },
