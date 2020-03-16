@@ -7,8 +7,8 @@
   "author": "cdaringe <christopher.dieringer@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.23.0",
-    "@typescript-eslint/parser": "2.23.0",
+    "@typescript-eslint/eslint-plugin": "2.24.0",
+    "@typescript-eslint/parser": "2.24.0",
     "ava": "2.4.0",
     "husky": "4.2.3",
     "lint-staged": "10.0.8",
