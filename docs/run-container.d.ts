@@ -2,6 +2,7 @@ import Docker from 'dockerode';
 export declare function imageExists(imageName: string): Promise<boolean>;
 export interface RunContainerOptions extends Docker.ContainerCreateOptions {
     Image: string;
+    verbose?: boolean;
 }
 export declare const run: (opts: RunContainerOptions) => Promise<Docker.Container>;
 export declare type RunSimpleOptions = {
@@ -18,6 +19,7 @@ export declare type RunSimpleOptions = {
     ports?: {
         [containerTcpPort: string]: string;
     };
+    verbose?: boolean;
 };
 export declare const runSimple: (opts: RunSimpleOptions) => Promise<Docker.Container>;
 //# sourceMappingURL=run-container.d.ts.map

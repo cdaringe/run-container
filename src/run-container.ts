@@ -14,14 +14,21 @@ export async function imageExists (imageName: string) {
 
 export interface RunContainerOptions extends Docker.ContainerCreateOptions {
   Image: string
+  verbose?: boolean
 }
 
 export const run = async (
   opts: RunContainerOptions
 ): Promise<Docker.Container> => {
   const docker = new Docker({ socketPath: '/var/run/docker.sock' })
-  const { Image: image } = opts
-  if (!(await imageExists(image))) await execa('docker', ['pull', image])
+  const { Image: image, verbose = false } = opts
+  if (!(await imageExists(image))) {
+    await execa(
+      'docker',
+      ['pull', image],
+      verbose ? { stdio: 'inherit' } : undefined
+    )
+  }
   const container = await docker.createContainer(opts)
   await container.start()
   return container
@@ -39,6 +46,7 @@ export type RunSimpleOptions = {
   ports?: {
     [containerTcpPort: string]: string
   }
+  verbose?: boolean
 }
 export const runSimple = async (opts: RunSimpleOptions) => {
   if (!opts) {
@@ -46,12 +54,13 @@ export const runSimple = async (opts: RunSimpleOptions) => {
   }
   const {
     autoRemove,
+    bindMounts = {},
     cmd,
     env = {},
     image: Image,
     name,
     ports = {},
-    bindMounts = {}
+    verbose
   } = opts
   const dockerodeConfig: Partial<Docker.ContainerCreateOptions> = {
     Env: [],
@@ -87,5 +96,5 @@ export const runSimple = async (opts: RunSimpleOptions) => {
   for (const key in env) {
     dockerodeConfig.Env!.push(`${key}=${env[key]}`)
   }
-  return run(dockerodeConfig as RunContainerOptions)
+  return run({ ...(dockerodeConfig as RunContainerOptions), verbose })
 }
