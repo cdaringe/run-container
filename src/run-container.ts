@@ -29,7 +29,13 @@ export const run = async (
       verbose ? { stdio: 'inherit' } : undefined
     )
   }
-  const container = await docker.createContainer(opts)
+  const {
+    // handled opts
+    verbose: _verbose,
+    // unhandled opts
+    ...dockerodeContainerCreateOpts
+  } = opts
+  const container = await docker.createContainer(dockerodeContainerCreateOpts)
   await container.start()
   return container
 }
