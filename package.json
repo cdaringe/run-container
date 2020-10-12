@@ -9,8 +9,8 @@
   "devDependencies": {
     "@ava/babel": "1.0.1",
     "@types/node": "13.13.5",
-    "@typescript-eslint/eslint-plugin": "4.4.0",
-    "@typescript-eslint/parser": "4.4.0",
+    "@typescript-eslint/eslint-plugin": "4.4.1",
+    "@typescript-eslint/parser": "4.4.1",
     "ava": "3.8.2",
     "husky": "4.3.0",
     "lint-staged": "10.4.0",
