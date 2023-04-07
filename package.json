@@ -19,7 +19,7 @@
     "prettier-standard": "16.4.1",
     "semantic-release": "21.0.1",
     "standardx": "7.0.0",
-    "typescript": "5.0.3"
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "@types/dockerode": "^2.5.27",
