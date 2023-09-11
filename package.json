@@ -22,9 +22,9 @@
     "typescript": "5.2.2"
   },
   "dependencies": {
-    "@types/dockerode": "^2.5.27",
+    "@types/dockerode": "^3.0.0",
     "@types/execa": "^2.0.0",
-    "dockerode": "^2",
+    "dockerode": "^3.0.0",
     "execa": "^5.0.0"
   },
   "scripts": {
