@@ -8,9 +8,6 @@ dependencies:
   '@types/dockerode':
     specifier: ^3.3.19
     version: 3.3.19
-  '@types/execa':
-    specifier: ^2.0.0
-    version: 2.0.0
   dockerode:
     specifier: ^3.3.5
     version: 3.3.5
@@ -830,13 +827,6 @@ packages:
     dependencies:
       '@types/docker-modem': 3.0.3
       '@types/node': 18.17.15
-    dev: false
-
-  /@types/execa@2.0.0:
-    resolution: {integrity: sha512-aBnkJ0r3khaZkHzu9pDZeWXrDg1N/ZtDGRQkK+KIqNVvvTvW+URXMUHQQCQMYdb2GPrcwu9Fq6l9iiT+pirIbg==}
-    deprecated: This is a stub types definition. execa provides its own type definitions, so you do not need this installed.
-    dependencies:
-      execa: 5.1.1
     dev: false
 
   /@types/glob@7.2.0:

@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "@types/dockerode": "^3.3.19",
-    "@types/execa": "^2.0.0",
     "dockerode": "^3.3.5",
     "execa": "^5.0.0"
   },
