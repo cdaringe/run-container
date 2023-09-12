@@ -6,9 +6,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-nvm-{{ checksum ".nvmrc" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-nvm-
+            - v1-nvm-{{ checksum ".nvmrc" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-nvm-
       - run:
           name: Install node via .nvmrc
           command: |
@@ -28,26 +28,28 @@ jobs:
             - /opt/circleci/.nvm
           key: v1-nvm-{{ checksum ".nvmrc" }}
       - run:
-          name: install yarn
-          command: npm install -g yarn
+          name: install pnpm
+          command: npm install -g pnpm
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run:
           name: install
-          command: NODE_ENV=development yarn
+          command: NODE_ENV=development pnpm
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       # clean
       - run: docker network prune --force
+      # lint
+      - run: pnpm lint
       # build
-      - run: yarn build
+      - run: pnpm build
       # test
-      - run: yarn test
+      - run: pnpm test
       - run:
           name: release
           command: npm run semantic-release || true
