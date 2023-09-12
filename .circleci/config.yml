@@ -37,7 +37,7 @@ jobs:
             - v1-dependencies-
       - run:
           name: install
-          command: NODE_ENV=development pnpm
+          command: NODE_ENV=development pnpm install
       - save_cache:
           paths:
             - node_modules
