@@ -45,11 +45,11 @@ jobs:
       # clean
       - run: docker network prune --force
       # lint
-      - run: pnpm lint
+      - run: pnpm run lint
       # build
-      - run: pnpm build
+      - run: pnpm run build
       # test
-      - run: pnpm test
+      - run: pnpm run test
       - run:
           name: release
           command: npm run semantic-release || true
