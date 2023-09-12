@@ -26,11 +26,11 @@ async function go() {
 async function maybePruneContainer({ name }: { name: string }) {
   const containers = await docker.listContainers({ all: true });
   const existingContainerMeta = containers.find((container) =>
-    container.Names.some((containerName) => containerName.match(name))
+    container.Names.some((containerName) => containerName.match(name)),
   );
   if (existingContainerMeta) {
     const existingContainer = await docker.getContainer(
-      existingContainerMeta.Id
+      existingContainerMeta.Id,
     );
     await existingContainer.remove({ force: true });
   }

@@ -23,7 +23,7 @@ test("boots container", async (t) => {
   t.is(
     Object.keys(containerData.HostConfig.PortBindings).length,
     1,
-    "has host port exposed"
+    "has host port exposed",
   );
   await container.remove({ force: true });
 });
