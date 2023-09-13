@@ -88,6 +88,9 @@ export const runSimple = async (opts: RunSimpleOptions) => {
     const tcpContainerPort = containerPort.match(/tcp/)
       ? containerPort
       : `${containerPort}/tcp`;
+    const nextExposedPorts = dockerodeConfig.ExposedPorts || {};
+    dockerodeConfig.ExposedPorts = nextExposedPorts;
+    nextExposedPorts[tcpContainerPort] = {};
     dockerodeConfig.HostConfig!.PortBindings![tcpContainerPort] = [
       { HostPort: hostPort },
     ];
