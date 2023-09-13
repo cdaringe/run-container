@@ -8,12 +8,14 @@ const testBashScriptFilename = path.resolve(__dirname, "slow-exit.sh");
 
 test("boots container", async (t) => {
   const container = await run({
+    name: "test_postgres",
     Image: "postgres",
     ExposedPorts: {
       "5432/tcp": {},
     },
+    Env: ["POSTGRES_PASSWORD=faketestpassword"],
     HostConfig: {
-      AutoRemove: true,
+      // AutoRemove: true,
       PortBindings: { "5432/tcp": [{ HostPort: "40000" }] },
     },
   });

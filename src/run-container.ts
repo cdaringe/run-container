@@ -88,9 +88,8 @@ export const runSimple = async (opts: RunSimpleOptions) => {
     const tcpContainerPort = containerPort.match(/tcp/)
       ? containerPort
       : `${containerPort}/tcp`;
-    const tcpHostPort = hostPort.match(/tcp/) ? hostPort : `${hostPort}/tcp`;
     dockerodeConfig.HostConfig!.PortBindings![tcpContainerPort] = [
-      { HostPort: tcpHostPort },
+      { HostPort: hostPort },
     ];
   }
   for (const hostVolume in bindMounts) {
