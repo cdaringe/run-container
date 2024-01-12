@@ -18,7 +18,7 @@
     "perish": "1.0.3",
     "prettier": "3.2.1",
     "prettier-standard": "16.4.1",
-    "semantic-release": "22.0.12",
+    "semantic-release": "23.0.0",
     "ts-node": "10.9.2",
     "typescript": "5.3.3"
   },
