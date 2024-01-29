@@ -14,7 +14,7 @@
     "ava": "6.1.0",
     "husky": "9.0.6",
     "lint-staged": "15.2.0",
-    "npm-run-all2": "5.0.2",
+    "npm-run-all2": "6.1.1",
     "perish": "1.0.3",
     "prettier": "3.2.2",
     "prettier-standard": "16.4.1",
