@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@types/dockerode':
     specifier: ^3.3.19
-    version: 3.3.24
+    version: 3.3.26
   dockerode:
     specifier: ^4.0.0
     version: 4.0.2
@@ -855,11 +855,11 @@ packages:
     resolution: {integrity: sha512-yKpAGEuKRSS8wwx0joknWxsmLha78wNMe9R2S3UNsVOkZded8UqOrV8KoeDXoXsjndxwyF3eIhyClGbO1SEhEg==}
     dependencies:
       '@types/node': 20.11.25
-      '@types/ssh2': 1.11.19
+      '@types/ssh2': 1.15.0
     dev: false
 
-  /@types/dockerode@3.3.24:
-    resolution: {integrity: sha512-679y69OYusf7Fr2HtdjXPUF6hnHxSA9K4EsuagsMuPno/XpJHjXxCOy2I5YL8POnWbzjsQAi0pyKIYM9HSpQog==}
+  /@types/dockerode@3.3.26:
+    resolution: {integrity: sha512-/K+I9bGhRO2SvyIHisGeOsy/ypxnWLz8+Rde9S2tNNEKa3r91e0XMYIEq2D+kb7srm7xrmpAR0CDKfXoZOr4OA==}
     dependencies:
       '@types/docker-modem': 3.0.6
       '@types/node': 20.11.25
@@ -880,8 +880,8 @@ packages:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
     dev: true
 
-  /@types/node@18.19.18:
-    resolution: {integrity: sha512-80CP7B8y4PzZF0GWx15/gVWRrB5y/bIjNI84NK3cmQJu0WZwvmj2WMA5LcofQFVfLqqCSp545+U2LsrVzX36Zg==}
+  /@types/node@18.19.22:
+    resolution: {integrity: sha512-p3pDIfuMg/aXBmhkyanPshdfJuX5c5+bQjYLIikPLXAUycEogij/c50n/C+8XOA5L93cU4ZRXtn+dNQGi0IZqQ==}
     dependencies:
       undici-types: 5.26.5
     dev: false
@@ -899,10 +899,10 @@ packages:
     resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
     dev: true
 
-  /@types/ssh2@1.11.19:
-    resolution: {integrity: sha512-ydbQAqEcdNVy2t1w7dMh6eWMr+iOgtEkqM/3K9RMijMaok/ER7L8GW6PwsOypHCN++M+c8S/UR9SgMqNIFstbA==}
+  /@types/ssh2@1.15.0:
+    resolution: {integrity: sha512-YcT8jP5F8NzWeevWvcyrrLB3zcneVjzYY9ZDSMAMboI+2zR1qYWFhwsyOFVzT7Jorn67vqxC0FRiw8YyG9P1ww==}
     dependencies:
-      '@types/node': 18.19.18
+      '@types/node': 18.19.22
     dev: false
 
   /@types/unist@2.0.8:
@@ -2002,7 +2002,7 @@ packages:
     requiresBuild: true
     dependencies:
       buildcheck: 0.0.6
-      nan: 2.18.0
+      nan: 2.19.0
     dev: false
     optional: true
 
@@ -4171,8 +4171,8 @@ packages:
     engines: {node: '>=6.x.x'}
     dev: true
 
-  /nan@2.18.0:
-    resolution: {integrity: sha512-W7tfG7vMOGtD30sHoZSSc/JVYiyDPEyQVso/Zz+/uQd0B0L46gtC+pHha5FFMRpil6fm/AoEcRWyOVi4+E/f8w==}
+  /nan@2.19.0:
+    resolution: {integrity: sha512-nO1xXxfh/RWNxfd/XPfbIfFk5vgLsAxUR9y5O0cHMJu/AW9U95JLXqthYHjEp+8gQ5p96K9jUp8nbVOxCdRbtw==}
     requiresBuild: true
     dev: false
     optional: true
@@ -5548,7 +5548,7 @@ packages:
       bcrypt-pbkdf: 1.0.2
     optionalDependencies:
       cpu-features: 0.0.9
-      nan: 2.18.0
+      nan: 2.19.0
     dev: false
 
   /stack-utils@2.0.6:
