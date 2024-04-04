@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@types/dockerode':
     specifier: ^3.3.19
-    version: 3.3.27
+    version: 3.3.28
   dockerode:
     specifier: ^4.0.0
     version: 4.0.2
@@ -854,11 +854,12 @@ packages:
       '@types/ssh2': 1.15.0
     dev: false
 
-  /@types/dockerode@3.3.27:
-    resolution: {integrity: sha512-IPH/MndcEqOCm91bFfFGbNqSMZN2GBx6idQso3VRGaBdfCr7HatJ+TIZ47e5Fs91Jy6A4p0e+37rC7TLWDhu8w==}
+  /@types/dockerode@3.3.28:
+    resolution: {integrity: sha512-RjY96chW88t2QvSebCsec+mQYo3/nyOr+/tVcE+0ynlOg2m/i9wPE52DhptzF75QDlhv2uDYVPqKfHKeGTn6Fg==}
     dependencies:
       '@types/docker-modem': 3.0.6
       '@types/node': 20.12.4
+      '@types/ssh2': 1.15.0
     dev: false
 
   /@types/glob@7.2.0:
