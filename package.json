@@ -8,7 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@ava/babel": "2.0.0",
-    "@types/node": "20.12.10",
+    "@types/node": "20.12.11",
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
     "ava": "6.1.3",
