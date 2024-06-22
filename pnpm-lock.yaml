@@ -20,8 +20,8 @@ devDependencies:
     specifier: 2.0.0
     version: 2.0.0
   '@types/node':
-    specifier: 20.14.7
-    version: 20.14.7
+    specifier: 20.14.8
+    version: 20.14.8
   '@typescript-eslint/eslint-plugin':
     specifier: 7.13.1
     version: 7.13.1(@typescript-eslint/parser@7.13.1)(eslint@8.57.0)(typescript@5.5.2)
@@ -54,7 +54,7 @@ devDependencies:
     version: 24.0.0(typescript@5.5.2)
   ts-node:
     specifier: 10.9.2
-    version: 10.9.2(@types/node@20.14.7)(typescript@5.5.2)
+    version: 10.9.2(@types/node@20.14.8)(typescript@5.5.2)
   typescript:
     specifier: 5.5.2
     version: 5.5.2
@@ -857,7 +857,7 @@ packages:
   /@types/docker-modem@3.0.6:
     resolution: {integrity: sha512-yKpAGEuKRSS8wwx0joknWxsmLha78wNMe9R2S3UNsVOkZded8UqOrV8KoeDXoXsjndxwyF3eIhyClGbO1SEhEg==}
     dependencies:
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       '@types/ssh2': 1.15.0
     dev: false
 
@@ -865,7 +865,7 @@ packages:
     resolution: {integrity: sha512-5PRRq/yt5OT/Jf77ltIdz4EiR9+VLnPF+HpU4xGFwUqmV24Co2HKBNW3w+slqZ1CYchbcDeqJASHDYWzZCcMiQ==}
     dependencies:
       '@types/docker-modem': 3.0.6
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       '@types/ssh2': 1.15.0
     dev: false
 
@@ -873,7 +873,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
     dev: true
 
   /@types/minimatch@5.1.2:
@@ -886,8 +886,8 @@ packages:
       undici-types: 5.26.5
     dev: false
 
-  /@types/node@20.14.7:
-    resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
+  /@types/node@20.14.8:
+    resolution: {integrity: sha512-DO+2/jZinXfROG7j7WKFn/3C6nFwxy2lLpgLjEXJz+0XKphZlTLJ14mo8Vfg8X5BWN6XjyESXq+LcYdT7tR3bA==}
     dependencies:
       undici-types: 5.26.5
 
@@ -5837,7 +5837,7 @@ packages:
       typescript: 5.5.2
     dev: true
 
-  /ts-node@10.9.2(@types/node@20.14.7)(typescript@5.5.2):
+  /ts-node@10.9.2(@types/node@20.14.8)(typescript@5.5.2):
     resolution: {integrity: sha512-f0FFpIdcHgn8zcPSbf1dRevwt047YMnaiJM3u2w2RewrB+fob/zePZcrOyQoLMMO7aBIddLcQIEK5dYjkLnGrQ==}
     hasBin: true
     peerDependencies:
@@ -5856,7 +5856,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.7
+      '@types/node': 20.14.8
       acorn: 8.11.2
       acorn-walk: 8.3.0
       arg: 4.1.3
